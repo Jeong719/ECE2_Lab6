@@ -5,5 +5,5 @@
 FPGA.code-workspace에서 Ctrl+Shift+B → 02 Simulate로 원문 테스트벤치를 실행합니다.
 02 Simulate 실행 시 build/sim/wave.vcd가 생성됩니다. 03 Open waveform으로 확인합니다.
 Vivado 프로젝트: C:/Users/hihj3/lab6/01_servo_ctrl/01_servo_ctrl.xpr
-보드 핀 배정: constraints/servo_ctrl.xdc 및 pin_map.md.
+보드 핀 배정: constraints/servo_ctrl.xdc.
 servo_ctrl의 left_pulse/right_pulse 입력을 그대로 사용합니다. 별도 버튼 처리 모듈은 포함하지 않습니다.
