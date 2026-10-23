@@ -1,0 +1,8 @@
+{
+  "sources": [
+    "src/lab6_uart.v",
+    "src/uart.v"
+  ],
+  "testbench": "sim/tb_uart_led.sv",
+  "simulation_top": "tb_uart_led"
+}

@@ -1,0 +1,9 @@
+{
+  "sources": [
+    "src/sram.v",
+    "src/sram_bus_control.v"
+  ],
+  "testbench": "sim/tb_sram.sv",
+  "simulation_top": "tb",
+  "require_wave": true
+}
