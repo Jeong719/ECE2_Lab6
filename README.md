@@ -21,7 +21,7 @@ STM32 제공 예제 2개와 과제 3개, FPGA 개별 실험 3개 및 STM32 과�
 
 각 폴더의 `ece2_474.code-workspace`를 VS Code에서 엽니다. STM32 확장을 설치하고 Configure → Build → F5 순서로 실행합니다. `main`에서 멈추면 다시 F5를 누릅니다. NUCLEO-G474RE용이며 작성한 실험 코드는 `Core/Src/ece2_474_routine.c`에 있습니다. `Drivers/`, `cmake/`, 시작 코드와 링커 스크립트도 포함되어 있습니다.
 
-PC 통신은 ST-LINK VCP, 9600 baud, 8N1, 줄바꿈 없음 설정입니다. 과제 6은 04와 09, 과제 7은 05와 10을 함께 사용합니다. MCU PC10(TX)을 FPGA EX2 5번(EXT0/G10)에 연결하고 GND를 공통으로 연결합니다. FPGA에서 PC로 전달한 문자는 FPGA의 별도 COM 포트에서 확인합니다. 과제 7 명령은 `0`=끄기, `1`=켜기, `2`=반전입니다.
+PC 통신은 ST-LINK VCP, 9600 baud, 8N1, 줄바꿈 없음 설정입니다. 과제 6은 04와 09, 과제 7은 05와 10을 함께 사용합니다. MCU PC10(TX)을 FPGA PORT A I/O00(BDIO00/F8)에 연결하고 GND를 공통으로 연결합니다. FPGA에서 PC로 전달한 문자는 FPGA의 별도 COM 포트에서 확인합니다. 과제 7 명령은 `0`=끄기, `1`=켜기, `2`=반전입니다.
 
 ## FPGA 실행
 
@@ -35,4 +35,6 @@ Vivado 2026.1, `xc7s75fgga484-1`을 사용했습니다. 각 `create_project.tcl`
 
 STM32 5개 프로젝트의 ARM GCC Debug 빌드, FPGA 5개 프로젝트의 테스트벤치 시뮬레이션과 VCD 생성, Vivado 합성·구현·비트스트림 생성을 확인했습니다. 실제 보드 다운로드와 동작 측정은 수업에서 확인합니다.
 
-LAB3 기준으로 파일 구성을 정리한 제출 버전은 `v1.1` 태그로 식별합니다.
+LAB3 기준으로 파일 구성을 정리한 제출 버전은 `v1.2` 태그로 식별합니다.
+
+UART RX 연결 변경(2026-10-26): 신호등 모듈이 EX2를 가리므로 PORT A I/O00(F8)을 사용합니다. MCU PC10 → I/O00, MCU GND → 보드 GND, PORT A ENABLE ON. 이 배정으로 다시 생성한 비트스트림을 다운로드합니다.
